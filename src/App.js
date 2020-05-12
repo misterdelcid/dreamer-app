@@ -1,26 +1,47 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom" 
+import { AddPostPage, EditPostPage, SearchPostsPage, PageNotFound, NavBar, HomePage, TitleBar } from './components'
+import styled, { ThemeProvider } from "styled-components";
+import { lightTheme, darkTheme } from './styles/theme'
 
-function App() {
+const App = props => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <ThemeProvider theme={props.theme === "light" ? lightTheme : darkTheme}>
+      <StyledApp>
+        <Router>
+          <NavBar />
+          <TitleBar />
+          <StyledContainer page>
+            <Switch>
+              <Route path="/" component={HomePage} exact={true} />
+              <Route path="/add" component={AddPostPage} />
+              <Route path="/edit/:id" component={EditPostPage} />
+              <Route path="/search" component={SearchPostsPage} />
+              <Route component={PageNotFound} />
+            </Switch>
+          </StyledContainer>
+        </Router>
+      </StyledApp>
+    </ThemeProvider>
+  );}
 
-export default App;
+const StyledApp = styled.div`
+  min-height: 100vh;
+  height: 100%;
+  font-family: ${(props) => props.theme.fonts.primaryFont};
+  color: ${(props) => props.theme.colors.gray21};
+  background-color: ${(props) => props.theme.colors.grayCC};
+  padding-bottom: 60px;
+`
+
+const StyledContainer = styled.div`
+  width: ${(props) => props.theme.primaryWidth};
+  margin: 0 auto;
+`
+
+const mapStateToProps = state => ({
+  theme: state.theme,
+})
+
+export default connect(mapStateToProps)(App)
