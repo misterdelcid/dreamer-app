@@ -49,7 +49,7 @@ const StyledModalMessage = styled.div`
     background-color: ${props => props.theme.colors.white};
     z-index: 300;
     border-radius: 8px;
-
+    max-width: 600px;
     h4 {
         font-size: 20px;
         margin-bottom: 8px;

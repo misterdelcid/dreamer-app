@@ -9,8 +9,7 @@ import { createGlobalStyle } from 'styled-components'
 import { startSetPosts } from './redux/postsActions'
 import './firebase/firebase'
 import { startSetTheme } from './redux/themeActions'
-import CircularProgress from "@material-ui/core/CircularProgress"
-import styled from 'styled-components'
+import { LoadingPage } from './components'
 
 const store = configureStore();
 
@@ -28,44 +27,10 @@ const connectedStyledApp =
         <App />
     </Provider>;
 
-const StyledLoading = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  background-color: #424242;
-`;
-
-const StyledLoadingMessage = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Roboto';
-  width: 200px;
-  height: 100px;
-  color: #fff;
-  font-size: 60px;
-  font-weight: 300;
-`;
-
-const StyledProgress = styled(CircularProgress)`
-  &&& {
-    color: #ee0979;
-  }
-`;
-
-// ReactDOM.render(
-//   <StyledLoading>
-//     <StyledLoadingMessage>Dream.r</StyledLoadingMessage>
-//     <StyledProgress />
-//   </StyledLoading>,
-//   document.getElementById("root")
-// );
+ReactDOM.render(
+  <LoadingPage />,
+  document.getElementById("root")
+);
 
 store.dispatch(startSetTheme());
 store.dispatch(startSetPosts()).then(() => {

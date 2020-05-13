@@ -1,5 +1,3 @@
-
-
 const getVisiblePosts = (posts, {text, sortBy}) => {
     return posts.filter(post => {
         const textMatch = post.title.toLowerCase().includes(text.toLowerCase()) || post.description.toLowerCase().includes(text.toLowerCase());

@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { startRemovePost, startEditPost } from '../redux/postsActions'
+import { startEditPost } from '../redux/postsActions'
 import styled from 'styled-components'
 import moment from 'moment'
 import EditRoundedIcon from '@material-ui/icons/EditRounded'
@@ -61,6 +61,9 @@ const StyledListItem = styled.div`
       (props.first && '8px 8px 0 0') ||
       (props.last && '0 0 8px 8px')}
     ;
+    @media (min-width: 600px) {
+      padding: 16px 32px;
+    }
 `
 
 

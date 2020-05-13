@@ -1,13 +1,10 @@
 import React, { useState } from 'react'
 import { NavLink, withRouter } from 'react-router-dom'
-import { connect } from 'react-redux'
-import { startToggleTheme } from "../redux/themeActions"
 import styled from 'styled-components'
-import { IconButton, ModalWhiteSpace } from './'
+import { IconButton, ModalWhiteSpace, ThemeSelector } from './'
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded'
-import WbSunnyIcon from "@material-ui/icons/WbSunny"
-import NightsStayIcon from "@material-ui/icons/NightsStay"
-import Switch from "@material-ui/core/Switch"
+import FilterDramaIcon from "@material-ui/icons/FilterDrama";
+
 
 const NavBar = props => {
     const [modalOpen, setModalOpen] = useState(false)
@@ -25,7 +22,7 @@ const NavBar = props => {
           />
           <div className={`nav-drawer ${modalOpen ? "open" : ""}`}>
             <StyledDrawerNavLink to="/" onClick={handleModalChange}>
-              Home
+              Posts
             </StyledDrawerNavLink>
             <StyledDrawerNavLink to="/add" onClick={handleModalChange}>
               Add
@@ -33,76 +30,100 @@ const NavBar = props => {
             <StyledDrawerNavLink to="/search" onClick={handleModalChange}>
               Search
             </StyledDrawerNavLink>
-            <StyledThemeSelector>
-              Mode:
-              <StyledIconsAndSwitch>
-                <WbSunnyIcon />
-                <Switch
-                  checked={props.theme === "dark"}
-                  onChange={() => props.startToggleTheme()}
-                />
-                <NightsStayIcon />
-              </StyledIconsAndSwitch>
-            </StyledThemeSelector>
+            <ThemeSelector label drawer/>
           </div>
         </StyledModal>
 
         <StyledNavBar>
           <StyledLogoBlock onClick={(e) => props.history.push("/")}>
-            <h1>Dream.r</h1>
-            <p>A journal that helps you log your dreams</p>
+            <StyledLogo />
+            <div>
+              <h1>Dream.r</h1>
+              <p>A journal that helps you log your dreams</p>
+            </div>
           </StyledLogoBlock>
           <StyledNav>
-            <StyledNavLink to="/">Home</StyledNavLink>
+            <StyledNavLink to="/">Posts</StyledNavLink>
             <StyledNavLink to="/add">Add</StyledNavLink>
             <StyledNavLink to="/search">Search</StyledNavLink>
+            <ThemeSelector navbar />
           </StyledNav>
-          <IconButton handleClick={handleModalChange}>
-            <MenuRoundedIcon />
-          </IconButton>
+          <StyledHamburgerIcon>
+            <IconButton handleClick={handleModalChange}>
+              <MenuRoundedIcon />
+            </IconButton>
+          </StyledHamburgerIcon>
         </StyledNavBar>
       </NavBarContainer>
-    );}
+    );};
 
 //Component Styles
 
 const NavBarContainer = styled.div`
     width: 100%;
     background-color: ${props => props.theme.colors.white};
-`
+`;
 
 const StyledNavBar = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0 16px 0;
-    margin: 0 auto 0 auto;
-    background-color: transparent;
-    width: ${props => props.theme.primaryWidth};
-    z-index:5;
-`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0 16px 0;
+  margin: 0 auto 0 auto;
+  background-color: transparent;
+  width: ${(props) => props.theme.primaryWidth};
+  z-index: 5;
+  @media (min-width: 600px) {
+    width: ${(props) => props.theme.secondaryWidth};
+    max-width: ${(props) => props.theme.maxWidth};
+  }
+`;
 
 const StyledLogoBlock = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
     cursor: pointer;
     h1 {
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
     p {
         font-size: .5em;
     }
-`
+`;
+
+const StyledLogo = styled(FilterDramaIcon)`
+  &&& {
+    font-size: 40px;
+    margin-right: 8px;
+    color: ${(props) => props.theme.colors.gray21};
+`;
+
 const StyledNav = styled.nav`
     display: none;
-`
+    @media (min-width: 600px) {
+      display: flex;
+    }
+`;
 
 const StyledNavLink = styled(NavLink)`
+    align-self: center;
     margin: 8px;
     text-decoration: none;
-    color: ${props => props.theme.colors.white}
-`
+    color: ${props => props.theme.colors.gray21};
+    transition: ${props => props.theme.primaryTransition};
+    &:hover {
+      color: ${props => props.theme.colors.primaryColor};
+    }
+`;
+
+const StyledHamburgerIcon = styled.div`
+    display: flex;
+    @media (min-width: 600px) {
+      display: none;
+    }
+`;
 
 const StyledModal = styled.div`
   .nav-drawer {
@@ -135,28 +156,6 @@ const StyledDrawerNavLink = styled(NavLink)`
         background: ${props => props.theme.colors.gray21};
         transition: ${props => props.theme.colors.primaryTransition};
     }
-`
+`;
 
-const StyledThemeSelector = styled.div`
-    padding: 24px 32px;
-`
-
-const StyledIconsAndSwitch = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 8px 0;
-
-`
-
-const mapStateToProps = state => ({
-    theme: state.theme,
-})
-
-const mapDispatchToProps = (dispatch) => {
-    return ({
-        startToggleTheme: () => dispatch(startToggleTheme()),
-    })
-}
-
-export default withRouter(connect(mapStateToProps, mapDispatchToProps)(NavBar))
+export default withRouter(NavBar);

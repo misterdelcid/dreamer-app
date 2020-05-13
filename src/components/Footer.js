@@ -8,22 +8,26 @@ const Footer = props => (
 )
 
 const StyledFooter = styled.div`
-    background-color: ${props => props.theme.colors.white};
-    padding: 16px 0px;
+  background-color: ${(props) => props.theme.colors.white};
+  padding: 16px 0px;
+  display: flex;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid ${(props) => props.theme.colors.grayCC};
+  flex-direction: row;
+  justify-content: center;
+  div {
+    width: ${(props) => props.theme.primaryWidth};
     display: flex;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    border-top: 1px solid ${props => props.theme.colors.grayCC};
     flex-direction: row;
-    justify-content: center;
-    div {
-        width: ${props => props.theme.primaryWidth};
-        display:flex;
-        flex-direction:row;
-        justify-content:flex-end;
+    justify-content: flex-end;
+    @media (min-width: 600px) {
+      width: ${(props) => props.theme.secondaryWidth};
+      max-width: ${(props) => props.theme.maxWidth};
     }
-`
+  }
+`;
 
 export default Footer

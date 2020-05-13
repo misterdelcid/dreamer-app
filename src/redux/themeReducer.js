@@ -5,6 +5,7 @@ const themeReducer = (state = defaultTheme, action) => {
         case 'TOGGLE_THEME':
             if (state === 'light') return 'dark' 
             if (state === 'dark') return 'light'
+            break
         case 'SET_THEME':
             return action.theme
         default:

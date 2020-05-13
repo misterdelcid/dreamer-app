@@ -1,7 +1,7 @@
 import React from 'react'
-import { PostList, Footer, Button, Modal } from './'
+import { PostList, Footer, Button } from '.'
 
-const HomePage = props => (
+const PostsPage = props => (
         <>
                 <PostList props={props} />
                 <Footer>
@@ -10,4 +10,4 @@ const HomePage = props => (
         </>
 )
 
-export default HomePage
+export default PostsPage

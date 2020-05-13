@@ -23,19 +23,27 @@ const TitleBar = props => {
 )}
 
 const StyledTitleBar = styled.div`
-    height: 80px;
-    background-image: linear-gradient(to right bottom, ${props => props.theme.colors.primaryColor}, ${props => props.theme.colors.secondaryColor});
-    display: flex;
-    align-items: center;
-    .container {
-        width: ${props => props.theme.primaryWidth};
-        margin: 0 auto;
+  height: 80px;
+  background-image: linear-gradient(
+    to right bottom,
+    ${(props) => props.theme.colors.primaryColor},
+    ${(props) => props.theme.colors.secondaryColor}
+  );
+  display: flex;
+  align-items: center;
+  .container {
+    width: ${(props) => props.theme.primaryWidth};
+    margin: 0 auto;
+    @media (min-width: 600px) {
+      width: ${(props) => props.theme.secondaryWidth};
+      max-width: ${(props) => props.theme.maxWidth};
     }
-    h2 {
-        color: #ffffff;
-        font-weight: 300;
-        font-size: 32px;
-    }
-`
+  }
+  h2 {
+    color: #ffffff;
+    font-weight: 300;
+    font-size: 32px;
+  }
+`;
 
 export default withRouter(TitleBar)

@@ -26,7 +26,9 @@ export const lightTheme = {
 
          primaryTransition: ".25s",
 
-         primaryWidth: "90%",
+         primaryWidth: "95%",
+         secondaryWidth: "85%",
+         maxWidth: "1920px",
        };
 
 export const darkTheme = {
@@ -57,5 +59,7 @@ export const darkTheme = {
 
          primaryTransition: ".25s",
 
-         primaryWidth: "90%",
+         primaryWidth: "95%",
+         secondaryWidth: "85%",
+         maxWidth: "1920px",
        };
