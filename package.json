@@ -2,6 +2,7 @@
   "name": "dreamer-app",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://misterdelcid.github.io/dreamer-app",
   "dependencies": {
     "@material-ui/core": "^4.9.11",
     "@material-ui/icons": "^4.9.1",
@@ -22,6 +23,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

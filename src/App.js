@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom" 
+import { HashRouter as Router, Switch, Route } from "react-router-dom" 
 import { AddPostPage, EditPostPage, SearchPostsPage, PageNotFound, NavBar, HomePage, TitleBar } from './components'
 import styled, { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from './styles/theme'
