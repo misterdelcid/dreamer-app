@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/dreamer-app/static/css/main.d498bfb3.chunk.css",
+    "main.js": "/dreamer-app/static/js/main.6d92b16c.chunk.js",
+    "main.js.map": "/dreamer-app/static/js/main.6d92b16c.chunk.js.map",
+    "runtime-main.js": "/dreamer-app/static/js/runtime-main.d2670942.js",
+    "runtime-main.js.map": "/dreamer-app/static/js/runtime-main.d2670942.js.map",
+    "static/js/2.e7e5f74b.chunk.js": "/dreamer-app/static/js/2.e7e5f74b.chunk.js",
+    "static/js/2.e7e5f74b.chunk.js.map": "/dreamer-app/static/js/2.e7e5f74b.chunk.js.map",
+    "index.html": "/dreamer-app/index.html",
+    "precache-manifest.dd5f5c95c67b7ca0aaef5dd83d2dcaaa.js": "/dreamer-app/precache-manifest.dd5f5c95c67b7ca0aaef5dd83d2dcaaa.js",
+    "service-worker.js": "/dreamer-app/service-worker.js",
+    "static/css/main.d498bfb3.chunk.css.map": "/dreamer-app/static/css/main.d498bfb3.chunk.css.map",
+    "static/js/2.e7e5f74b.chunk.js.LICENSE.txt": "/dreamer-app/static/js/2.e7e5f74b.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d2670942.js",
+    "static/js/2.e7e5f74b.chunk.js",
+    "static/css/main.d498bfb3.chunk.css",
+    "static/js/main.6d92b16c.chunk.js"
+  ]
+}
