@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/dreamer-app/precache-manifest.a5f636453dbc9ff8850cf02230d40524.js"
+  "/dreamer-app/precache-manifest.771d6eda92cc4a22f8b4b582e5bb6280.js"
 );
 
 self.addEventListener('message', (event) => {
