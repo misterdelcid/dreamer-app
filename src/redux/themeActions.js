@@ -7,13 +7,14 @@ export const toggleTheme = () => ({
 
 //Start Toggling the theme
 export const startToggleTheme = () => {
-    return dispatch => {
-        return database.ref('theme').once('value').then(snapshot => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/theme`).once('value').then(snapshot => {
             const theme = snapshot.val();
-            if (theme === 'light') return database.ref('theme').set('dark').then(() => {
+            if (theme === 'light') return database.ref(`users/${uid}/theme`).set('dark').then(() => {
                 return dispatch(toggleTheme());
             })
-            return database.ref('theme').set('light').then(() => {
+            return database.ref(`users/${uid}/theme`).set('light').then(() => {
                 return dispatch(toggleTheme());
             })
         });
@@ -28,8 +29,9 @@ export const setTheme = (theme) => ({
 
 //Start Setting the Theme
 export const startSetTheme = () => {
-    return dispatch => {
-        return database.ref('theme').once('value').then(snapshot => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/theme`).once('value').then(snapshot => {
             const theme = snapshot.val();
             dispatch(setTheme(theme));
         });

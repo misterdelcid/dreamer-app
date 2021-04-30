@@ -12,10 +12,10 @@ const PostList = (props) => {
         const postsLength = props.posts.length
         const path = props.location.pathname
         const message = {
-            postPage: 'No posts yet. Click Add Post to get started!',
+            postPage: 'You have no posts yet. Click Add Post below to get started!',
             searchPage: 'No matches found. Try searching by another keyword',
         }
-        if (postsLength === 0 && (path === '/' || path === '')) return message.postPage
+        if (postsLength === 0 && (path === '/posts' || path === '')) return message.postPage
         if (postsLength === 0 && path === '/search') return message.searchPage
         return false
     }

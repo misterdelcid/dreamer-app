@@ -44,8 +44,8 @@ const StyledModalMessage = styled.div`
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    height: 176px;
-    width: 90%;
+    height: 200px;
+    width: 85%;
     background-color: ${props => props.theme.colors.white};
     z-index: 300;
     border-radius: 8px;
@@ -55,7 +55,7 @@ const StyledModalMessage = styled.div`
         margin-bottom: 8px;
     }
     div {
-        padding: 16px;
+        padding: 24px;
     }
 `
 

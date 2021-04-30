@@ -10,9 +10,9 @@ const TextArea = props => (
 const StyledTextArea = styled.textarea`
     font-size: ${props => props.theme.fonts.primaryFontSize};
     color: ${props => props.theme.colors.gray21};
-    background-color: ${props => props.theme.colors.gray42 + '26'};
+    background-color: ${props => props.theme.colors.grayEE};
+    border: 2px solid transparent; 
     border-radius: 8px;
-    border: none;
     outline: ${props => props.theme.colors.primaryColor};
     padding: 16px;
     font-family: ${props => props.theme.fonts.primaryFont};
@@ -20,9 +20,9 @@ const StyledTextArea = styled.textarea`
     caret-color: ${props => props.theme.colors.gray21};
     transition: ${props => props.theme.primaryTransition};
     resize: none;
-    height: 296px;
-    &:hover {
-        background-color: ${props => props.theme.colors.gray42 + '4d'};
+    height: 160px;
+    &:hover, &:focus {
+        border: 2px solid ${props => props.theme.colors.primaryColor};
         transition: ${props => props.theme.primaryTransition};
     }
 `

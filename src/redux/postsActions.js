@@ -8,7 +8,8 @@ export const addPost = (post) => ({
 
 //Start Adding a Post
 export const startAddPost = (postData = {}) => {
-    return(dispatch => {
+    return((dispatch, getState) => {
+        const uid = getState().auth.uid;
         const {
             title = '',
             description = '',
@@ -16,7 +17,7 @@ export const startAddPost = (postData = {}) => {
         } = postData
         const post = {title, description, createdAt}
 
-        database.ref('posts').push(post).then(ref => {
+        database.ref(`users/${uid}/posts`).push(post).then(ref => {
             dispatch(addPost({
                 id: ref.key,
                 ...post,
@@ -33,8 +34,9 @@ export const removePost = ({id} = {}) => ({
 
 //Start Removing a Post
 export const startRemovePost =({id} = {}) => {
-    return(dispatch => {
-        database.ref(`posts/${id}`).remove().then(() => {
+    return((dispatch, getState) => {
+        const uid = getState().auth.uid;
+        database.ref(`users/${uid}/posts/${id}`).remove().then(() => {
             dispatch(removePost({ id }));
         });
     });
@@ -49,8 +51,9 @@ export const editPost = (id, updates) => ({
 
 //Start Editing a Post
 export const startEditPost = (id, updates) => {
-    return(dispatch => {
-        return database.ref(`posts/${id}`).update(updates).then(() => {
+    return((dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/posts/${id}`).update(updates).then(() => {
             dispatch(editPost(id, updates));
         });
     });
@@ -64,8 +67,9 @@ export const setPosts = (posts) => ({
 
 //Start Getting & Setting Posts
 export const startSetPosts = () => {
-    return (dispatch => {
-        return database.ref('posts').once('value').then(snapshot => {
+    return ((dispatch, getState) => {
+        const uid = getState().auth.uid;
+        return database.ref(`users/${uid}/posts`).once('value').then(snapshot => {
             const posts = [];
             snapshot.forEach(childSnapshot => {
                 posts.push({

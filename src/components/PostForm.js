@@ -38,7 +38,7 @@ const PostForm = (props) => {
         if (state.title || state.description) {
             handleModalChange()
         } else {
-            props.history.push('/')
+            props.history.push('/posts')
         }
     }
 
@@ -49,14 +49,12 @@ const PostForm = (props) => {
         } else {
             setState({...state, error:''})
             props.onSubmit({
-                title:state.title,
+                title: state.title,
                 description: state.description,
                 createdAt: new Date().getTime(),
             })
         }
     }
-
-
     
     return (
       <>

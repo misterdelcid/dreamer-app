@@ -1,23 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { HashRouter as Router, Switch, Route } from "react-router-dom" 
-import { AddPostPage, EditPostPage, SearchPostsPage, PageNotFound, NavBar, PostsPage, TitleBar } from './components'
+import { Router, Switch, Route } from "react-router-dom" 
+import createHistory from 'history/createBrowserHistory';
+import { AddPostPage, EditPostPage, SearchPostsPage, PageNotFound, NavBar, PostsPage, TitleBar, LoginPage } from './components'
 import styled, { ThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from './styles/theme'
+import PrivateRoute from './routes/PrivateRoute';
+import PublicRoute from './routes/PublicRoute';
+
+export const history = createHistory();
 
 const App = props => {
   return (
     <ThemeProvider theme={props.theme === "light" ? lightTheme : darkTheme}>
       <StyledApp>
-        <Router>
+        <Router history={history}>
           <NavBar />
           <TitleBar />
           <StyledContainer page>
             <Switch>
-              <Route path="/" component={PostsPage} exact={true} />
-              <Route path="/add" component={AddPostPage} />
-              <Route path="/edit/:id" component={EditPostPage} />
-              <Route path="/search" component={SearchPostsPage} />
+              <PublicRoute path="/" component={LoginPage} exact={true} />
+              <PrivateRoute path="/posts" component={PostsPage} />
+              <PrivateRoute path="/add" component={AddPostPage} />
+              <PrivateRoute path="/edit/:id" component={EditPostPage} />
+              <PrivateRoute path="/search" component={SearchPostsPage} />
               <Route component={PageNotFound} />
             </Switch>
           </StyledContainer>

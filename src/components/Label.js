@@ -6,9 +6,9 @@ const Label = props => (
 )
 
 const StyledLabel = styled.label`
-    margin: 16px 16px 0 16px;
-    font-size: ${props => props.theme.fonts.primaryFontSize};
-    color: ${props => props.theme.colors.primaryDark+80};
+    margin: 16px 16px 0px 16px;
+    font-size: ${props => props.theme.fonts.secondaryFontSize};
+    color: ${props => props.theme.colors.gray42+'bf'};
 `
 
 export default Label

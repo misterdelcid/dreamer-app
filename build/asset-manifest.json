@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/dreamer-app/static/css/main.d498bfb3.chunk.css",
-    "main.js": "/dreamer-app/static/js/main.bc8410b1.chunk.js",
-    "main.js.map": "/dreamer-app/static/js/main.bc8410b1.chunk.js.map",
+    "main.js": "/dreamer-app/static/js/main.3e81be0a.chunk.js",
+    "main.js.map": "/dreamer-app/static/js/main.3e81be0a.chunk.js.map",
     "runtime-main.js": "/dreamer-app/static/js/runtime-main.d2670942.js",
     "runtime-main.js.map": "/dreamer-app/static/js/runtime-main.d2670942.js.map",
-    "static/js/2.f1e8d624.chunk.js": "/dreamer-app/static/js/2.f1e8d624.chunk.js",
-    "static/js/2.f1e8d624.chunk.js.map": "/dreamer-app/static/js/2.f1e8d624.chunk.js.map",
+    "static/js/2.575ef13b.chunk.js": "/dreamer-app/static/js/2.575ef13b.chunk.js",
+    "static/js/2.575ef13b.chunk.js.map": "/dreamer-app/static/js/2.575ef13b.chunk.js.map",
     "index.html": "/dreamer-app/index.html",
-    "precache-manifest.a5f636453dbc9ff8850cf02230d40524.js": "/dreamer-app/precache-manifest.a5f636453dbc9ff8850cf02230d40524.js",
+    "precache-manifest.771d6eda92cc4a22f8b4b582e5bb6280.js": "/dreamer-app/precache-manifest.771d6eda92cc4a22f8b4b582e5bb6280.js",
     "service-worker.js": "/dreamer-app/service-worker.js",
     "static/css/main.d498bfb3.chunk.css.map": "/dreamer-app/static/css/main.d498bfb3.chunk.css.map",
-    "static/js/2.f1e8d624.chunk.js.LICENSE.txt": "/dreamer-app/static/js/2.f1e8d624.chunk.js.LICENSE.txt"
+    "static/js/2.575ef13b.chunk.js.LICENSE.txt": "/dreamer-app/static/js/2.575ef13b.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.d2670942.js",
-    "static/js/2.f1e8d624.chunk.js",
+    "static/js/2.575ef13b.chunk.js",
     "static/css/main.d498bfb3.chunk.css",
-    "static/js/main.bc8410b1.chunk.js"
+    "static/js/main.3e81be0a.chunk.js"
   ]
 }

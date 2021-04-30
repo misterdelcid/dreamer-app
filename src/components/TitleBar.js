@@ -6,7 +6,8 @@ import { PostListFilters } from './'
 const TitleBar = props => {
     const pageTitle = () => {
         const path = props.location.pathname
-        if (path === '/' || '') return 'Posts'
+        if (path === '/' || '') return 'Log In'
+        if (path === '/posts' || '') return 'Posts'
         if (path === '/add') return 'Add Post'
         if (path.includes('/edit')) return 'Edit Post'
         return 'Uh-oh'
@@ -41,7 +42,7 @@ const StyledTitleBar = styled.div`
   }
   h2 {
     color: #ffffff;
-    font-weight: 300;
+    font-weight: 600;
     font-size: 32px;
   }
 `;

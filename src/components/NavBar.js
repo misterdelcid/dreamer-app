@@ -4,14 +4,15 @@ import styled from 'styled-components'
 import { IconButton, ModalWhiteSpace, ThemeSelector } from './'
 import MenuRoundedIcon from '@material-ui/icons/MenuRounded'
 import FilterDramaIcon from "@material-ui/icons/FilterDrama";
-
+import { startLogout } from '../redux/authActions';
+import { connect } from 'react-redux';
 
 const NavBar = props => {
     const [modalOpen, setModalOpen] = useState(false)
 
     const handleModalChange = () => {
         setModalOpen(!modalOpen);
-    }
+    };
 
     return (
       <NavBarContainer>
@@ -31,6 +32,9 @@ const NavBar = props => {
               Search
             </StyledDrawerNavLink>
             <ThemeSelector label drawer/>
+            <StyledDrawerNavLink to="" onClick={props.startLogout}>
+              Logout
+            </StyledDrawerNavLink>
           </div>
         </StyledModal>
 
@@ -39,23 +43,35 @@ const NavBar = props => {
             <StyledLogo />
             <div>
               <h1>Dream.r</h1>
-              <p>A journal that helps you log your dreams</p>
+              <p>A journal for your dreams</p>
             </div>
           </StyledLogoBlock>
+          {props.isAuthenticated ? 
+          <>
           <StyledNav>
-            <StyledNavLink to="/">Posts</StyledNavLink>
+            <StyledNavLink to="/posts">Posts</StyledNavLink>
             <StyledNavLink to="/add">Add</StyledNavLink>
             <StyledNavLink to="/search">Search</StyledNavLink>
             <ThemeSelector navbar />
+            <StyledNavLink to="" onClick={props.startLogout}>Logout</StyledNavLink>
           </StyledNav>
           <StyledHamburgerIcon>
             <IconButton handleClick={handleModalChange}>
               <MenuRoundedIcon />
             </IconButton>
           </StyledHamburgerIcon>
-        </StyledNavBar>
+          </>: <div></div>}
+        </StyledNavBar> 
       </NavBarContainer>
     );};
+
+const mapDispatchToProps = dispatch => ({
+  startLogout: () => dispatch(startLogout())
+});
+
+const mapStateToProps = (state) => ({
+    isAuthenticated: !!state.auth.uid
+});
 
 //Component Styles
 
@@ -158,4 +174,4 @@ const StyledDrawerNavLink = styled(NavLink)`
     }
 `;
 
-export default withRouter(NavBar);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(NavBar));

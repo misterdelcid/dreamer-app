@@ -68,7 +68,7 @@ const StyledListItem = styled.div`
 
 
 const StyledPostTitle = styled.h4`
-    font-size: ${props => props.theme.fonts.secondaryFontSize};
+    font-size: ${props => props.theme.fonts.primaryFontSize};
     margin: 8px 0 4px 0;
     font-weight: ${props => props.theme.fonts.mediumFontWeight};
 `
