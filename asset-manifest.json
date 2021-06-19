@@ -1,22 +1,24 @@
 {
   "files": {
-    "main.css": "/dreamer-app/static/css/main.d498bfb3.chunk.css",
-    "main.js": "/dreamer-app/static/js/main.3e81be0a.chunk.js",
-    "main.js.map": "/dreamer-app/static/js/main.3e81be0a.chunk.js.map",
-    "runtime-main.js": "/dreamer-app/static/js/runtime-main.d2670942.js",
-    "runtime-main.js.map": "/dreamer-app/static/js/runtime-main.d2670942.js.map",
-    "static/js/2.575ef13b.chunk.js": "/dreamer-app/static/js/2.575ef13b.chunk.js",
-    "static/js/2.575ef13b.chunk.js.map": "/dreamer-app/static/js/2.575ef13b.chunk.js.map",
-    "index.html": "/dreamer-app/index.html",
-    "precache-manifest.771d6eda92cc4a22f8b4b582e5bb6280.js": "/dreamer-app/precache-manifest.771d6eda92cc4a22f8b4b582e5bb6280.js",
-    "service-worker.js": "/dreamer-app/service-worker.js",
-    "static/css/main.d498bfb3.chunk.css.map": "/dreamer-app/static/css/main.d498bfb3.chunk.css.map",
-    "static/js/2.575ef13b.chunk.js.LICENSE.txt": "/dreamer-app/static/js/2.575ef13b.chunk.js.LICENSE.txt"
+    "main.css": "/dreamer/static/css/main.d498bfb3.chunk.css",
+    "main.js": "/dreamer/static/js/main.fcc3df5d.chunk.js",
+    "main.js.map": "/dreamer/static/js/main.fcc3df5d.chunk.js.map",
+    "runtime-main.js": "/dreamer/static/js/runtime-main.87cb1b5d.js",
+    "runtime-main.js.map": "/dreamer/static/js/runtime-main.87cb1b5d.js.map",
+    "static/js/2.fdd0a28d.chunk.js": "/dreamer/static/js/2.fdd0a28d.chunk.js",
+    "static/js/2.fdd0a28d.chunk.js.map": "/dreamer/static/js/2.fdd0a28d.chunk.js.map",
+    "index.html": "/dreamer/index.html",
+    "precache-manifest.7ec2de5f1c9d01979f6fd6b483323fc3.js": "/dreamer/precache-manifest.7ec2de5f1c9d01979f6fd6b483323fc3.js",
+    "service-worker.js": "/dreamer/service-worker.js",
+    "static/css/main.d498bfb3.chunk.css.map": "/dreamer/static/css/main.d498bfb3.chunk.css.map",
+    "static/js/2.fdd0a28d.chunk.js.LICENSE.txt": "/dreamer/static/js/2.fdd0a28d.chunk.js.LICENSE.txt",
+    "static/media/github-brands.svg": "/dreamer/static/media/github-brands.06b7e22f.svg",
+    "static/media/google-brands.svg": "/dreamer/static/media/google-brands.008875e2.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.d2670942.js",
-    "static/js/2.575ef13b.chunk.js",
+    "static/js/runtime-main.87cb1b5d.js",
+    "static/js/2.fdd0a28d.chunk.js",
     "static/css/main.d498bfb3.chunk.css",
-    "static/js/main.3e81be0a.chunk.js"
+    "static/js/main.fcc3df5d.chunk.js"
   ]
 }
